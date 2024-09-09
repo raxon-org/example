@@ -1,12 +1,12 @@
 {{R3M}}
 <section name="main">
     <div class="logo">
-        <a href="https://www.r3m.io/" title="https://www.r3m.io"><img src="{{config('domain.url')}}Icon/android-chrome-192x192.png" alt="R3M Logo"></a>
+        <a href="https://www.raxon.org/" title="https://www.raxon.org"><img src="{{config('domain.url')}}Icon/android-chrome-192x192.png" alt="Raxon Logo"></a>
     </div>
-    <h1><a href="https://www.r3m.io/" title="https://www.r3m.io/">{{literal}}<strong>{{</strong>R3M<strong>}}</strong>{{/literal}}</a></h1>
+    <h1><a href="https://www.raxon.org/" title="https://www.raxon.org/">{{literal}}<strong>{{</strong>R3M<strong>}}</strong>{{/literal}}</a></h1>
     <h3>About</h3>
     <p>
-        r3m_io/framework is a robust, high-performance PHP framework that streamlines the process of developing comprehensive websites and applications. <br>
+        raxon/framework is a robust, high-performance PHP framework that streamlines the process of developing comprehensive websites and applications. <br>
         Here are some key attributes that distinguish this framework: <br>
     </p>
     <ol>
@@ -42,7 +42,7 @@
     </li>
     </ol>
     <p>
-        All in all, r3m_io/framework fuses power with ease and flexibility, offering an optimal toolset that caters well to contemporary web application development needs.
+        All in all, raxon/framework fuses power with ease and flexibility, offering an optimal toolset that caters well to contemporary web application development needs.
     </p>
     <h3>License</h3>
     <pre>

@@ -33,7 +33,7 @@ trait Main {
             return;
         }
         $command = Core::binary($object) .
-            ' r3m_io/basic apache2 site create' .
+            ' raxon/basic apache2 site create' .
             ' -server.admin=development@universeorange.com' .
             ' -server.name=example.com' .
             ' -development'
@@ -53,7 +53,7 @@ trait Main {
             echo rtrim($notification, PHP_EOL) . PHP_EOL;
         }
         $command = Core::binary($object) .
-            ' r3m_io/basic apache2 site enable' .
+            ' raxon/basic apache2 site enable' .
             ' -server.name=example.local'
         ;
         Core::execute($object, $command, $output, $notification);
@@ -63,7 +63,7 @@ trait Main {
         if(!empty($notification)){
             echo rtrim($notification, PHP_EOL) . PHP_EOL;
         }
-        $command = Core::binary($object) . ' r3m_io/basic apache2 reload';
+        $command = Core::binary($object) . ' raxon/basic apache2 reload';
         Core::execute($object, $command, $output, $notification);
         if(!empty($output)){
             echo rtrim($output, PHP_EOL) . PHP_EOL;
@@ -200,7 +200,7 @@ trait Main {
             $force = $options->force;
         }
         $has = false;
-        $command = Core::binary($object) . ' r3m_io/host name has -host=example.local';
+        $command = Core::binary($object) . ' raxon/host name has -host=example.local';
         Core::execute($object, $command, $output, $notification);
         if (!empty($output)) {
             $has = trim($output);
@@ -217,7 +217,7 @@ trait Main {
             $has === false
         ) {
             //create
-            $command = Core::binary($object) . ' r3m_io/host name add -ip=127.0.0.1 -host=example.local';
+            $command = Core::binary($object) . ' raxon/host name add -ip=127.0.0.1 -host=example.local';
             Core::execute($object, $command, $output, $notification);
             if(!empty($output)){
                 echo rtrim($output, PHP_EOL) . PHP_EOL;
@@ -230,7 +230,7 @@ trait Main {
             $has === true &&
             $force === true
         ) {
-            $command = Core::binary($object) . ' r3m_io/host name delete -host=example.local';
+            $command = Core::binary($object) . ' raxon/host name delete -host=example.local';
             Core::execute($object, $command, $output, $notification);
             if(!empty($output)){
                 echo rtrim($output, PHP_EOL) . PHP_EOL;
@@ -238,7 +238,7 @@ trait Main {
             if(!empty($notification)){
                 echo rtrim($notification, PHP_EOL) . PHP_EOL;
             }
-            $command = Core::binary($object) . ' r3m_io/host name add -ip=127.0.0.1 -host=example.local';
+            $command = Core::binary($object) . ' raxon/host name add -ip=127.0.0.1 -host=example.local';
             Core::execute($object, $command, $output, $notification);
             if(!empty($output)){
                 echo rtrim($output, PHP_EOL) . PHP_EOL;
