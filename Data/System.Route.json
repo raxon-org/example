@@ -1,0 +1,49 @@
+{
+  "System": {
+    "Route": [
+      {
+        "#class": "System.Route",
+        "name": "raxon-org-cli-example",
+        "path": "raxon\/example",
+        "controller": "Package:Raxon:Example:Controller:Cli:run",
+        "priority": 1001,
+        "request": {
+          "language": "en"
+        },
+        "method": [
+          "CLI"
+        ]
+      },
+      {
+        "#class": "System.Route",
+        "name": "index",
+        "path": "\/",
+        "host": "example.com",
+        "controller": "Domain:Example.Com:Controller:Index:main",
+        "priority": 2001,
+        "request": {
+          "language": "en"
+        },
+        "method": [
+          "GET",
+          "POST"
+        ]
+      },
+      {
+        "#class": "System.Route",
+        "name": "debug",
+        "path": "\/Debug",
+        "host": "example.com",
+        "controller": "Domain:Example.Com:Controller:Index:debug",
+        "priority": 2002,
+        "request": {
+          "language": "en"
+        },
+        "method": [
+          "GET",
+          "POST"
+        ]
+      }
+    ]
+  }
+}
