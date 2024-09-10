@@ -76,8 +76,9 @@ section[name="main"] .logo {
 }
 
 h1 a {
-    font-family: r3m;
+    font-family: r3m, monospace;
     color: rgba(75, 150, 245, 1);
+    text-decoration: none;
 }
 
 h1 a strong {
