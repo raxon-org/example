@@ -78,7 +78,7 @@ section[name="main"] .logo {
 h1 a {
     font-family: r3m;
     color: rgba(75, 150, 245, 1);
-    text-underline: none;
+    text-decoration: none;
 }
 
 h1 a strong {
