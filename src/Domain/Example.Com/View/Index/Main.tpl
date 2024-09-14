@@ -14,7 +14,7 @@
     <li>
         <p>
             <b>Rapid Performance:</b><br>
-            The utilization of PHP's OpCache by the framework ensures speedy performance, resulting in enhanced efficiency and user experience.<br>
+            The utilization of the ramdisk by the framework ensures speedy performance, resulting in enhanced efficiency and user experience.<br>
         </p>
     </li>
     <li>
