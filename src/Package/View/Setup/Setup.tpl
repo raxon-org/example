@@ -1,4 +1,3 @@
-{{R3M}}
 {{$register = Package.Raxon.Example:Init:register()}}
 {{if(!is.empty($register))}}
 {{Package.Raxon.Example:Import:role.system()}}
