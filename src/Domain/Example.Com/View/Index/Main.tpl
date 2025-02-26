@@ -25,19 +25,19 @@
     <li>
         <p>
             <b>Enhanced Flexibility with Plugins and Traits:</b><br>
-            R3M/language feature of the framework facilitates the use of plugins (functions & modifiers) and traits, allowing developers to broaden their application capabilities and adapt their code to more eclectic requirements.<br>
+            RAX/language feature of the framework facilitates the use of plugins (functions & modifiers) and traits, allowing developers to broaden their application capabilities and adapt their code to more eclectic requirements.<br>
         </p>
     </li>
     <li>
         <p>
             <b>JSON Scripting:</b><br>
-            An intriguing feature of this framework is its ability to script in JSON. This not only makes development more flexible but also makes it compatible with various data exchange formats, making R3M/Framework a more versatile tool for modern web development.<br>
+            An intriguing feature of this framework is its ability to script in JSON. This not only makes development more flexible but also makes it compatible with various data exchange formats, making RAX/Framework a more versatile tool for modern web development.<br>
         </p>
     </li>
     <li>
         <p>
             <b>User-friendly:</b><br>
-            Despite being powerful, R3M/Framework doesn't compromise on the ease of use, making it well-suited for both beginners venturing into web application development and seasoned developers seeking powerful tools.<br>
+            Despite being powerful, RAX/Framework doesn't compromise on the ease of use, making it well-suited for both beginners venturing into web application development and seasoned developers seeking powerful tools.<br>
         </p>
     </li>
     </ol>
