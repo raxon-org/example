@@ -13,7 +13,7 @@ use Raxon\Module\Host;
 use Raxon\Module\Parse;
 use Raxon\Module\Sort;
 
-use Raxon\Node\Model\Node;
+use Raxon\Node\Module\Node;
 
 use Exception;
 
