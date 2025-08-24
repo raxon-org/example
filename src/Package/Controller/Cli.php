@@ -22,9 +22,7 @@ class Cli extends Controller {
     const DIR = __DIR__ . '/';
     const MODULE_INFO = 'Info';
     const INFO = [
-        '{{binary()}} raxon/example                 | Example options',
-        '{{binary()}} raxon/example setup           | Example setup',
-        '{{binary()}} raxon/example update          | Example update',
+        '{{binary()}} raxon/example                 | Example options',        
     ];
 
     /**
