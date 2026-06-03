@@ -26,11 +26,11 @@ trait Main {
      * @throws DirectoryCreateException
      * @throws Exception
      */
-    public function site(object $flags, object $options): void
+    public function site(object $flags, object $options): ?string
     {
         $object = $this->object();
         if($object->config(Config::POSIX_ID) !== 0){
-            return;
+            return null;
         }
         $command = Core::binary($object) .
             ' raxon/basic apache2 site create' .
@@ -52,6 +52,7 @@ trait Main {
         if(!empty($notification)){
             echo rtrim($notification, PHP_EOL) . PHP_EOL;
         }
+        breakpoint('check site create');
         $command = Core::binary($object) .
             ' raxon/basic apache2 site enable' .
             ' -server.name=example.local'
@@ -63,6 +64,7 @@ trait Main {
         if(!empty($notification)){
             echo rtrim($notification, PHP_EOL) . PHP_EOL;
         }
+        breakpoint('check site enable and disabled');
         $command = Core::binary($object) . ' raxon/basic apache2 reload';
         Core::execute($object, $command, $output, $notification);
         if(!empty($output)){
