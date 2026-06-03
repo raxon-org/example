@@ -73,6 +73,7 @@ trait Main {
         if(!empty($notification)){
             echo rtrim($notification, PHP_EOL) . PHP_EOL;
         }
+        return null;
     }
 
     /**
