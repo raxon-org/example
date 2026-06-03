@@ -78,9 +78,8 @@ trait Main {
      * @throws FileWriteException
      * @throws Exception
      */
-    public function host_create($options=[]): bool
+    public function host_create(object $flags, object $options): bool
     {
-        $options = Core::object($options, Core::OBJECT_OBJECT);
         $object = $this->object();
         if($object->config(Config::POSIX_ID) !== 0){
             return false;
@@ -136,9 +135,8 @@ trait Main {
      * @throws FileWriteException
      * @throws Exception
      */
-    public function host_mapper_create($options=[]): bool
+    public function host_mapper_create(object $flags, object $options): bool
     {
-        $options = Core::object($options, Core::OBJECT_OBJECT);
         $object = $this->object();
         if($object->config(Config::POSIX_ID) !== 0){
             return false;
@@ -188,9 +186,8 @@ trait Main {
      * @throws FileWriteException
      * @throws Exception
      */
-    public function host_name_create($options=[]): bool
+    public function host_name_create(object $flags, object $options): bool
     {
-        $options = Core::object($options, Core::OBJECT_OBJECT);
         $object = $this->object();
         if ($object->config(Config::POSIX_ID) !== 0) {
             return false;
