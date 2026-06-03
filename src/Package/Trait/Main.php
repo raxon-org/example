@@ -5,6 +5,7 @@ use Raxon\App;
 use Raxon\Config;
 
 use Raxon\Exception\FileWriteException;
+use Raxon\Module\Cli;
 use Raxon\Module\Dir;
 use Raxon\Module\Core;
 use Raxon\Module\Event;
@@ -34,7 +35,7 @@ trait Main {
         }
         $command = Core::binary($object) .
             ' raxon/basic apache2 site create' .
-            ' -server.admin=development@universeorange.com' .
+            ' -server.admin=development@workandtravel.world' .
             ' -server.name=example.com' .
             ' -development'
         ;
@@ -96,7 +97,7 @@ trait Main {
             'domain' => 'example',
             'extension' => 'com',
             'url' => (object) [
-                'development' => 'https://example.local/',
+                'development' => 'https://example.local/', // add dev port
                 'production' => 'https://example.com/',
             ]
         ];
@@ -150,7 +151,7 @@ trait Main {
         $node = new Node($object);
         $class = 'System.Host.Mapper';
         $record = (object) [
-            'source' => 'example.local',
+            'source' => 'example.local', //add dev port ?
             'destination' => 'example.com'
         ];
         $exist = $node->record($class, $node->role_system(), [
@@ -200,7 +201,7 @@ trait Main {
             $force = $options->force;
         }
         $has = false;
-        $command = Core::binary($object) . ' raxon/host name has -host=example.local';
+        $command = Core::binary($object) . ' raxon/host name has -host=example.local'; //add dev port ?
         Core::execute($object, $command, $output, $notification);
         if (!empty($output)) {
             $has = trim($output);
@@ -217,7 +218,8 @@ trait Main {
             $has === false
         ) {
             //create
-            $command = Core::binary($object) . ' raxon/host name add -ip=127.0.0.1 -host=example.local';
+            echo Cli::tput('cursor.up') . Cli::tput('erase.line');
+            $command = Core::binary($object) . ' raxon/host name add -ip=127.0.0.1 -host=example.local'; //add dev port ?
             Core::execute($object, $command, $output, $notification);
             if(!empty($output)){
                 echo rtrim($output, PHP_EOL) . PHP_EOL;
@@ -230,7 +232,7 @@ trait Main {
             $has === true &&
             $force === true
         ) {
-            $command = Core::binary($object) . ' raxon/host name delete -host=example.local';
+            $command = Core::binary($object) . ' raxon/host name delete -host=example.local'; //add dev port ?
             Core::execute($object, $command, $output, $notification);
             if(!empty($output)){
                 echo rtrim($output, PHP_EOL) . PHP_EOL;
@@ -238,7 +240,7 @@ trait Main {
             if(!empty($notification)){
                 echo rtrim($notification, PHP_EOL) . PHP_EOL;
             }
-            $command = Core::binary($object) . ' raxon/host name add -ip=127.0.0.1 -host=example.local';
+            $command = Core::binary($object) . ' raxon/host name add -ip=127.0.0.1 -host=example.local'; //add dev port ?
             Core::execute($object, $command, $output, $notification);
             if(!empty($output)){
                 echo rtrim($output, PHP_EOL) . PHP_EOL;
