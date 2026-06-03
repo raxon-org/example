@@ -26,9 +26,8 @@ trait Main {
      * @throws DirectoryCreateException
      * @throws Exception
      */
-    public function site($options=[]): void
+    public function site(object $flags, object $options): void
     {
-        $options = Core::object($options, Core::OBJECT_OBJECT);
         $object = $this->object();
         if($object->config(Config::POSIX_ID) !== 0){
             return;
@@ -41,9 +40,9 @@ trait Main {
         ;
         foreach($options as $key => $value){
             if($value === true){
-                $command .= ' -' . $key;
+                $command .= ' -' . escapeshellarg($key);
             } else {
-                $command .= ' -' . $key . '=' . $value;
+                $command .= ' -' . escapeshellarg($key) . '=' . escapeshellcmd($value);
             }
         }
         Core::execute($object, $command, $output, $notification);
