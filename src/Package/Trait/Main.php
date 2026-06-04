@@ -52,11 +52,11 @@ trait Main {
         if(!empty($notification)){
             echo rtrim($notification, PHP_EOL) . PHP_EOL;
         }
-        breakpoint('check site create');
         $command = Core::binary($object) .
             ' raxon/basic apache2 site enable' .
             ' -server.name=example.local'
         ;
+        breakpoint($command);
         Core::execute($object, $command, $output, $notification);
         if(!empty($output)){
             echo rtrim($output, PHP_EOL) . PHP_EOL;
@@ -64,7 +64,6 @@ trait Main {
         if(!empty($notification)){
             echo rtrim($notification, PHP_EOL) . PHP_EOL;
         }
-        breakpoint('check site enable and disabled');
         $command = Core::binary($object) . ' raxon/basic apache2 reload';
         Core::execute($object, $command, $output, $notification);
         if(!empty($output)){
