@@ -122,16 +122,17 @@ var priya;
     src = src[0].split('/');
     src.pop();
     src = src.join('/') + '/';
-    console.log(src);   
-    var bin = src + 'Bin/';
-    var node = include(bin + 'Priya.prototype.js');
-    console.log(bin);
-    node.addEventListener('load', function(event){
-        priya = new priya({
-            "url" : url,
-            "bin" : bin,
-            "priya" : src,
-            "parameters" : parameters
-        });
-    }, false);
+    if(!priya){
+        var bin = src + 'Bin/';
+        var node = include(bin + 'Priya.prototype.js');
+        console.log(bin);
+        node.addEventListener('load', function(event){
+            priya = new priya({
+                "url" : url,
+                "bin" : bin,
+                "priya" : src,
+                "parameters" : parameters
+            });
+        }, false);
+    }
 })();
