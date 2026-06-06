@@ -1,6 +1,6 @@
 <html>
 <head>
-    <title>HTTP/1.0 404 Not Found: {{$file|default:$exception.file|default:'Unknown file'}}</title>
+    <title>HTTP/1.0 404 Not Found: {{$file|>default:$exception.file|>default:'Unknown file'}}</title>
     <style>
         body, html, section {
             margin: 0;
