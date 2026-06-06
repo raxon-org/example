@@ -1,15 +1,15 @@
 <html>
 <head>
-    <title>HTTP/1.0 404 Not Found: {{$exception.file}}</title>
+    <title>HTTP/1.0 501 Not Implemented: {{$exception.file}}</title>
     <style>
         {{require(config('framework.dir.view') + 'Http/Head/Style.rcss')}}
     </style>
 </head>
 <body>
 <section name="header">
-    <h3>HTTP/1.0 404 Not Found:</h3>
+    <h3>HTTP/1.0 501 Not Implemented:</h3>
 </section><section name="message">
-    <h3>{{$exception.message}}</h3>
+    <h3>{{$exception.message|>string.newline.to.break}}</h3>
 </section><section name="detail">
     <label>Exception: </label>
     <span>{{$exception.className}}</span><br>
@@ -19,31 +19,7 @@
     <span>{{$exception.line}}</span><br>
     <label>Code: </label>
     <span>{{$exception.code}}</span><br>
-    {{if(!is.empty($exception.route))}}
-    <label>Route: </label>
-    <span>{{$exception.route}}</span><br>
-    {{/if}}
-    <label>Environment: </label>
-    <span>{{config('framework.environment')}}</span><br>
 </section>
-{{if(
-!is.empty($exception.location) &&
-is.array($exception.location) &&
-config('framework.environment') === 'development'
-)}}
-<section name="location">
-    <label>Locations: </label><br>
-    <table class="location">
-        {{foreach($exception.location as $location_nr => $location_value)}}
-        <tr class="list">
-            <td colspan="4">
-                <span>{{$location_value}}</span>
-            </td>
-        </tr>
-        {{/foreach}}
-    </table>
-</section>
-{{/if}}
 {{if(
 config('framework.environment') === 'development' &&
 !is.empty($exception.file)
@@ -80,25 +56,24 @@ config('framework.environment') === 'development' &&
     <table class="trace">
         {{foreach($exception.trace as $nr => $trace)}}
         <tr class="trace">
-            <td class="title"><b>File:</b> {{$trace.file|>default:'unknown'}} (<b>{{$trace.line|>default:'unknown'}}</b>)</td>
+            <td class="title"><b>File:</b> {{$trace.file|>default:'unknown file'}} (<b>{{$trace.line|>default:'unknown line'}}</b>)</td>
         </tr>
         <tr class="trace">
-            <td class="class"><b>Class:</b> {{$trace.class|>default:'unknown'}}</td>
+            <td class="class"><b>Class:</b> {{$trace.class|>default:'unknown class'}}</td>
         </tr>
         <tr class="trace">
-            <td class="function"><b>Function:</b> {{$trace.function|>default:'unknown'}}</td>
+            <td class="function"><b>Function:</b> {{$trace.function|>default:'unknown function'}}</td>
         </tr>
         <tr class="trace-source">
             <td colspan="4">
                 <label>Source: </label><br>
-                {{if(is.string($trace.file) && file.exist($trace.file))}}
                 {{$source = file.read($trace.file)}}
                 {{if($source)}}
                 {{$read = explode("\n", $source)}}
                 {{$read_line = $trace.line - 1}}
                 <table class="source">
-                {{for($i = ($read_line - 3); $i <= ($read_line + 3); $i++)}}                        
-                    {{$row = $read[$i]}}        
+                    {{for($i = ($read_line - 3); $i <= ($read_line + 3); $i++)}}
+                    {{$row = $read[$i]}}
                     {{$row_nr = $i + 1}}
                     {{if(
                     $i === $read_line &&
@@ -108,15 +83,12 @@ config('framework.environment') === 'development' &&
                     {{elseif(is.set($row))}}
                     <tr><td class="line"><pre>{{$row_nr}}</pre></td><td class="row"><pre>{{$row}}</pre></td></tr>
                     {{/if}}
-                {{/for}}
+                    {{/for}}
                 </table>
-                {{/if}}
                 {{/if}}
             </td>
         </tr>
         {{/foreach}}
-    </table>
-</section>
 {{/if}}
 </body>
 </html>
