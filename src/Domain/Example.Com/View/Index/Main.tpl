@@ -42,7 +42,7 @@
     </li>
     </ol>
     <p>
-        All in all, raxon/framework fuses power with ease and flexibility, offering an optimal toolset that caters well to contemporary web application development needs.
+        All in all, raxon/framework fuses power with ease and flexibility, offering an optimal toolset that caters well to contemporary web application development needs. <br>
         Have a look at <a href="/Debug" title="Debug">debug</a> output to see what&quote;s going on under the hood.
     </p>
     <h3>License</h3>
