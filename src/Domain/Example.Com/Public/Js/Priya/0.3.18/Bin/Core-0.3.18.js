@@ -2628,7 +2628,6 @@ priya.microtime = _('prototype').microtime;
  * Next.prototype.js
  */
 _('prototype').next = function (tagName){
-    console.warn('Deprecated, use element.nextSibling or element.nextElementSibling');
     if(!tagName){
         tagName = this.tagName;
     }
@@ -2940,7 +2939,6 @@ priya.prepend = _('prototype').prepend;
  * Previous.prototype.js
  */
 _('prototype').previous = function (tagName){
-    console.warn('Deprecated, use element.previousSibling or element.previousElementSibling');
     if(!tagName){
         tagName = this.tagName;
     }
@@ -2998,7 +2996,7 @@ _('prototype').redirect = function (data){
             return;
         }
         var data = {"redirect": data};
-    }
+    }        
     window.location.href = data.redirect;
     return data;
 }
@@ -3127,11 +3125,17 @@ _('prototype').request = function (url, data, script){
         }
     }
     const xhttp = new XMLHttpRequest();
+    xhttp.priority = 'high';
     let header = priya.collection('request.header');
     priya.collection('delete', 'request.header');
     xhttp.onreadystatechange = function() {
         if (xhttp.readyState === 4) {
-            if(xhttp.responseText.substr(0, 1) === '{' && xhttp.responseText.substr(-1) === '}'){
+            if(
+                xhttp.responseText.substr(0, 1) === '{' &&
+                xhttp.responseText.substr(-1) === '}' &&
+                xhttp.responseText.substr(0, 2) !== '{{' &&
+                xhttp.responseText.substr(-2) !== '}}'
+            ){
                 const data = JSON.parse(xhttp.responseText);
                 if(_('prototype').is_empty(data.trace)){
                     priya.link(data);
@@ -3844,6 +3848,35 @@ _('prototype').trim = function(str, charlist){
 }
 
 priya.trim = _('prototype').trim;
+
+/**
+ * Urldecode.prototype.js
+ */
+_('prototype').urldecode = function (str) {
+    return decodeURIComponent(str).replace(/\+/g, " ");
+}
+
+priya.urldecode = _('prototype').urldecode;
+
+_('prototype').urlencode = function (str) {
+    return encodeURIComponent(str).replace(/%20/g, '+');
+}
+
+
+/**
+ * Urlencode.prototype.js
+ */
+priya.urlencode = _('prototype').urlencode;
+
+
+/**
+ * sleep.prototype.js
+ */
+_('prototype').sleep = async function (msec) {
+    return new Promise(resolve => setTimeout(resolve, msec));
+}
+
+priya.sleep = _('prototype').sleep;
 
 /**
  * Usleep.prototype.js
