@@ -1,3 +1,4 @@
+{{dd('$this')}}
 <html>
 <head>
     <title>HTTP/1.0 404 Not Found: {{$file}}</title>
