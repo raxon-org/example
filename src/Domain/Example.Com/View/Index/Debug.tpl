@@ -7,7 +7,7 @@
     {{if(config('framework.environment') === 'development')}}
     <pre>
     {{$json = Core::object(data.all(), Core::JSON)}}
-    {{$json|string.replace:['<','>']:['&lt;', '&gt;']}}
+    {{$json|>string.replace:['<','>']:['&lt;', '&gt;']}}
     </pre>
     {{/if}}
 </section>
