@@ -37,7 +37,7 @@
     <li>
         <p>
             <b>User-friendly:</b><br>
-            Despite being powerful, RAX/Framework {{literal}}doesn't{{/literal}} compromise on the ease of use, making it well-suited for both beginners venturing into web application development and seasoned developers seeking powerful tools.<br>
+            Despite being powerful, RAX/Framework doesn&quote;t compromise on the ease of use, making it well-suited for both beginners venturing into web application development and seasoned developers seeking powerful tools.<br>
         </p>
     </li>
     </ol>
