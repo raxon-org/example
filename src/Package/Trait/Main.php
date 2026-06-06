@@ -56,7 +56,6 @@ trait Main {
             ' raxon/basic apache2 site enable' .
             ' -server.name=example.local'
         ;
-        breakpoint($command);
         Core::execute($object, $command, $output, $notification);
         if(!empty($output)){
             echo rtrim($output, PHP_EOL) . PHP_EOL;
