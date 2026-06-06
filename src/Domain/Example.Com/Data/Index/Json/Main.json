@@ -3,16 +3,16 @@
     "class" : "{{config('controller.class')}}",
     "function" : "{{config('controller.function')}}",
     "template" : {
-        "name" : "{{file.basename($this.#rootNode.class)}}/{{$this.#rootNode.function|string.uppercase.first|replace:'_':'.'}}",
+        "name" : "{{file.basename($this.#rootNode.class)}}/{{$this.#rootNode.function|>string.uppercase.first|>replace:'_':'.'}}",
         "url" : "{{config('controller.dir.view')}}{{$this.name}}.tpl"
     },
     "menu" : {
         "name" : "menu",
-        "title" : "{{$this.name|string.uppercase.first}}"
+        "title" : "{{$this.name|>string.uppercase.first}}"
     },
     "navigation" : {
         "name" : "navigation",
-        "title" : "{{$this.name|string.uppercase.first}}",
+        "title" : "{{$this.name|>string.uppercase.first}}",
         "category" : [
             "start",
             "basic",
