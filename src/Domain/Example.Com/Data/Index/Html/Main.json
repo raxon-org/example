@@ -6,12 +6,12 @@
         "<script src=\"\/Js\/Priya\/Latest\/Priya.js?{{config('framework.version')}}.{{$this.build}}\"></script>"
     ],
     "link" : [
-        "<link rel=\"stylesheet\" href=\"\/{{file.basename($this.class)}}\/Css\/{{$this.function|>string.uppercase.first|>replace:'_':'.'}}.css?{{config('framework.version')}}.{{$this.build}}\">",
+        "<link rel=\"stylesheet\" href=\"\/{{file.basename($this.class)}}\/Css\/{{$this.function|>string.uppercase.first|>string.replace:'_':'.'}}.css?{{config('framework.version')}}.{{$this.build}}\">",
         "<link rel=\"preconnect\" href=\"https://fonts.gstatic.com\">",
         "<link href=\"https:\/\/fonts.googleapis.com\/css2?family=Source+Sans+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&display=swap\" rel=\"stylesheet\">"
     ],
     "template" : {
-        "name" : "{{file.basename($this.#rootNode.class)}}/{{$this.#rootNode.function|>string.uppercase.first|>replace:'_':'.'}}",
+        "name" : "{{file.basename($this.#rootNode.class)}}/{{$this.#rootNode.function|>string.uppercase.first|>string.replace:'_':'.'}}",
         "url" : "{{config('controller.dir.view')}}{{$this.name}}.tpl"
     },
     "html" : {
