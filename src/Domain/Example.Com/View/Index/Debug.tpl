@@ -6,7 +6,7 @@
     <h3>Debug</h3>
     {{if(config('framework.environment') === 'development')}}
     <pre>
-    {{Core::object(data(), Core::JSON)}}
+    {{Core::object(data.all(), Core::JSON)}}
     </pre>
     {{/if}}
 </section>
