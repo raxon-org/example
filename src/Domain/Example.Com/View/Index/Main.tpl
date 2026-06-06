@@ -46,7 +46,7 @@
     </p>
     <h3>License</h3>
     <pre>
-{{if(file.exist(config('framework.dir.root')))}}
+{{if(file.exist(config('framework.dir.root') + 'LICENSE'))}}
 {{file.read(config('framework.dir.root') + 'LICENSE')}}
 {{else}}
 <span class="error">License not found...</span>
