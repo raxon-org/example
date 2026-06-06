@@ -28,7 +28,7 @@
             "author" : "{{$this.meta.author}}",
             "title" : "{{$this.meta.title}}",
             "description" : "{{$this.meta.description}}",
-            "keywords" : "{{this.$meta.keywords}}"
+            "keywords" : "{{$this.meta.keywords}}"
         }
     }
 }
