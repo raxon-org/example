@@ -122,6 +122,7 @@ var priya;
     src = src[0].split('/');
     src.pop();
     src = src.join('/') + '/';
+    console.log(src);   
     var bin = src + 'Bin/';
     var node = include(bin + 'Priya.prototype.js');
     console.log(bin);
