@@ -70,13 +70,17 @@ section[name="main"] .logo {
     margin-right: auto;
 }
 
+section[name="main"] .error {
+    color: rgba(200, 0, 0, 1);
+}
+
 @font-face {
-    font-family: r3m;
+    font-family: raxon;
     src: url("/Fonts/ZenDots-Regular.ttf");
 }
 
 h1 a {
-    font-family: r3m, monospace;
+    font-family: raxon, monospace;
     color: rgba(75, 150, 245, 1);
     text-decoration: none;
 }

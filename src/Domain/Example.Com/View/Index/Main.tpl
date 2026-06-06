@@ -46,11 +46,16 @@
     </p>
     <h3>License</h3>
     <pre>
+{{if(file.exist(config('framework.dir.root')))}}
 {{file.read(config('framework.dir.root') + 'LICENSE')}}
+{{else}}
+<span class="error">License not found...</span>
+{{/if}}
+
     </pre>
     <h3>Support</h3>
     <p>
         If you want support, you can get it! <br>
-        Contact <a href="mailto:info@universeorange.com">info@universeorange.com</a>.
+        Contact <a href="mailto:info@workandtravel.world">info@workandtravel.world</a>.
     </p>
 </section>
