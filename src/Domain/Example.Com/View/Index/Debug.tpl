@@ -5,6 +5,8 @@
     <h1><a href="https://www.raxon.org/" title="https://www.raxon.org/">{{literal}}<strong>{{</strong>RAX<strong>}}</strong>{{/literal}}</a></h1>
     <h3>Debug</h3>
     {{if(config('framework.environment') === 'development')}}
-    {{d('{{$this}}')}}
+    <pre>
+    {{Core::object(data(), Core::JSON)}}
+    </pre>
     {{/if}}
 </section>
