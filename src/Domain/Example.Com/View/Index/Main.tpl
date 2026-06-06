@@ -1,10 +1,4 @@
 <section name="main">
-    {{if(file.exist(config('framework.dir.root') + 'LICENSE'))}}
-    {{file.read(config('framework.dir.root') + 'LICENSE')}}
-    {{else}}
-    <span class="error">License not found...</span>
-    {{/if}}
-
     <div class="logo">
         <a href="https://www.raxon.org/" title="https://www.raxon.org"><img src="{{config('domain.url')}}Icon/android-chrome-192x192.png" alt="Raxon Logo"></a>
     </div>
@@ -43,7 +37,7 @@
     <li>
         <p>
             <b>User-friendly:</b><br>
-            Despite being powerful, RAX/Framework doesn't compromise on the ease of use, making it well-suited for both beginners venturing into web application development and seasoned developers seeking powerful tools.<br>
+            Despite being powerful, RAX/Framework doesn{{literal}}'{{/literal}}t compromise on the ease of use, making it well-suited for both beginners venturing into web application development and seasoned developers seeking powerful tools.<br>
         </p>
     </li>
     </ol>
