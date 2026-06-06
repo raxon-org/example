@@ -6,8 +6,8 @@
     <h3>Debug</h3>
     {{if(config('framework.environment') === 'development')}}
     <pre>
-    {{$data = Core::object(data.all(), Core::JSON)}}
-    {{$data|string.replace:['<','>'],['&lt;', '&gt;']}}
+    {{$json = Core::object(data.all(), Core::JSON)}}
+    {{$json|string.replace:['<','>']:['&lt;', '&gt;']}}
     </pre>
     {{/if}}
 </section>
