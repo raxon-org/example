@@ -37,7 +37,7 @@
     <li>
         <p>
             <b>User-friendly:</b><br>
-            Despite being powerful, RAX/Framework doesn{{literal}}'{{/literal}}t compromise on the ease of use, making it well-suited for both beginners venturing into web application development and seasoned developers seeking powerful tools.<br>
+            Despite being powerful, RAX/Framework {{literal}}doesn't{{/literal}} compromise on the ease of use, making it well-suited for both beginners venturing into web application development and seasoned developers seeking powerful tools.<br>
         </p>
     </li>
     </ol>
@@ -51,7 +51,6 @@
 {{else}}
 <span class="error">License not found...</span>
 {{/if}}
-
     </pre>
     <h3>Support</h3>
     <p>
