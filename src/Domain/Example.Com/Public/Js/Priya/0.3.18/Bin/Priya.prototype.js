@@ -31,6 +31,7 @@ var priya = function (collection){
     this.collect.parameters = collection.parameters;
     this.collect.require = {};
     this.collect.require.jid = 1;
+    console.log(this.collect);
     var jid = this.collect.require.jid;
     let agent = navigator.userAgent;
     let needle = 'SamsungBrowser/';
