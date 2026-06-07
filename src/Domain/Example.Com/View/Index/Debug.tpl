@@ -5,7 +5,7 @@
     <h1><a href="https://www.raxon.org/" title="https://www.raxon.org/">{{literal}}<strong>{{</strong>RAX<strong>}}</strong>{{/literal}}</a></h1>
     <h3>Debug</h3>
     {{if(config('framework.environment') === 'development')}}
-    <h1>Before:</h1>
+    <h1>Read & Parsed:</h1>
     <pre>
     {{$controller.data.function = config('controller.function')}}
     {{$controller.data.name = $controller.data.function|>string.uppercase.first}}
@@ -17,13 +17,13 @@
         config('extension.json')
     ), Core::JSON
     )}}
-    {{$controller.data.body|>html.entity.encode}}
-    {{data.delete('controller')}}
+{{$controller.data.body|>html.entity.encode}}
+{{data.delete('controller')}}
     </pre>
-    <h1>After:</h1>
+    <h1>Compiled:</h1>
     <pre>
-    {{$json = Core::object(data.all(), Core::JSON)}}
-    {{$json|>html.entity.encode}}
+{{$json = Core::object(data.all(), Core::JSON)}}
+{{$json|>html.entity.encode}}
     </pre>
     {{/if}}
 </section>
