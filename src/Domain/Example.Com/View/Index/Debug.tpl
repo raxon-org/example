@@ -7,10 +7,10 @@
     {{if(config('framework.environment') === 'development')}}
     <h1>Before:</h1>
     <pre>
-    {{$controller.data = config('controller.function')}}
-    {{$controller.data = $controller.data|>string.uppercase.first}}
-    {{$data = Core::object(data.read(config('controller.dir.data') + 'Index/Html/' + $controller.data + config('extension.json')), Core::JSON)}}
-    {{$data|>html.entity.encode}}
+    {{$controller.data.function = config('controller.function')}}
+    {{$controller.data.name = $controller.data|>string.uppercase.first}}
+    {{$controller.data.body = Core::object(data.read(config('controller.dir.data') + 'Index/Html/' + $controller.data + config('extension.json')), Core::JSON)}}
+    {{$controller.data.body|>html.entity.encode}}
     </pre>
     <h1>After:</h1>
     <pre>
