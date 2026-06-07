@@ -6,10 +6,12 @@
     <h3>Debug</h3>
     {{if(config('framework.environment') === 'development')}}
     <h1>Before:</h1>
+    <pre>
     {{$controller.data = config('controller.function')}}
     {{$controller.data = $controller.data|>string.uppercase.first}}
     {{$data = Core::object(data.read(config('controller.dir.data') + 'Index/Html/' + $controller.data + config('extension.json')), Core::JSON)}}
     {{$data|>html.entity.encode}}
+    </pre>
     <h1>After:</h1>
     <pre>
     {{$json = Core::object(data.all(), Core::JSON)}}
