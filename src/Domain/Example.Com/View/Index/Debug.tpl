@@ -10,7 +10,7 @@
     {{$controller.data.function = config('controller.function')}}
     {{$controller.data.name = $controller.data.function|>string.uppercase.first}}
     {{$controller.data.body = Core::object(
-    data.read(
+    file.read(
         config('controller.dir.data') +
         'Index/Html/' +
         $controller.data.name +
