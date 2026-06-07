@@ -25,10 +25,10 @@
             "body" : "{{require($this.#rootNode.template.url)}}"
         },
         "head" : {
-            "author" : "{{$this.meta.author}}",
-            "title" : "{{$this.meta.title}}",
-            "description" : "{{$this.meta.description}}",
-            "keywords" : "{{$this.meta.keywords}}"
+            "author" : "{{$this.#rootNode.meta.author}}",
+            "title" : "{{$this.#rootNode.meta.title}}",
+            "description" : "{{$this.#rootNode.meta.description}}",
+            "keywords" : "{{$this.#rootNode.meta.keywords}}"
         }
     }
 }
