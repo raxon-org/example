@@ -5,6 +5,10 @@
     <h1><a href="https://www.raxon.org/" title="https://www.raxon.org/">{{literal}}<strong>{{</strong>RAX<strong>}}</strong>{{/literal}}</a></h1>
     <h3>Debug</h3>
     {{if(config('framework.environment') === 'development')}}
+    <h1>Before:</h1>
+    {{$data = Core::object(data.read(config('controller.data') + 'Index/Html/' + config('controller.title') + config('extension.json')), Core::JSON)}}
+    {{$data|>html.entity.encode}}
+    <h1>After:</h1>
     <pre>
     {{$json = Core::object(data.all(), Core::JSON)}}
     {{$json|>html.entity.encode}}
