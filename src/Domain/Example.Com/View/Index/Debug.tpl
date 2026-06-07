@@ -7,7 +7,8 @@
     {{if(config('framework.environment') === 'development')}}
     <h1>Before:</h1>
     {{$controller.data = config('controller.function')}}
-    {{$data = Core::object(data.read(config('controller.dir.data') + 'Index/Html/' + {{$controller.data|>string.uppercase.first}} + config('extension.json')), Core::JSON)}}
+    {{$controller.data = $controller.data|>string.uppercase.first}}
+    {{$data = Core::object(data.read(config('controller.dir.data') + 'Index/Html/' + $controller.data + config('extension.json')), Core::JSON)}}
     {{$data|>html.entity.encode}}
     <h1>After:</h1>
     <pre>
