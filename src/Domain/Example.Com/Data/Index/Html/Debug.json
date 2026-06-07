@@ -19,8 +19,7 @@
     "template" : {
         "name" : "{{file.basename($this.#rootNode.class)}}/{{$this.#rootNode.function|>string.uppercase.first|>string.replace:'_':'.'}}",
         "url" : "{{config('controller.dir.view')}}{{$this.name}}.tpl"
-    },
-    "name" : "Wonderful",
+    }, 
     "html" : {
         "content" : {
             "body" : "{{require($this.#rootNode.template.url)}}"
