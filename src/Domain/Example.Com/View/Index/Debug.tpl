@@ -9,7 +9,7 @@
     <pre>
     {{$controller.data.function = config('controller.function')}}
     {{$controller.data.name = $controller.data.function|>string.uppercase.first}}
-    {{$controller.data.body = Core::object(data.read(config('controller.dir.data') + 'Index/Html/' + $controller.data + config('extension.json')), Core::JSON)}}
+    {{$controller.data.body = Core::object(data.read(config('controller.dir.data') + 'Index/Html/' + $controller.data.name + config('extension.json')), Core::JSON)}}
     {{$controller.data.body|>html.entity.encode}}
     </pre>
     <h1>After:</h1>
