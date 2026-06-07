@@ -18,6 +18,7 @@
     ), Core::JSON
     )}}
     {{$controller.data.body|>html.entity.encode}}
+    {{data.delete('controller')}}
     </pre>
     <h1>After:</h1>
     <pre>
