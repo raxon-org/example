@@ -5,7 +5,7 @@
     <h1><a href="https://www.raxon.org/" title="https://www.raxon.org/">{{literal}}<strong>{{</strong>RAX<strong>}}</strong>{{/literal}}</a></h1>
     <h3>Debug</h3>
     {{if(config('framework.environment') === 'development')}}
-    <h1>Read & Parsed: {{$this.#property}}.{{$this.#parentNode.#property}}.{{$this.#parentNode.#parentNode.#property}}</h1>
+    <h1>Read & Parsed: {{$this.#parentNode.#parentNode.#property}}.{{$this.#parentNode.#property}}.{{$this.#property}}</h1>
     <pre>
     {{$controller.data.function = config('controller.function')}}
     {{$controller.data.name = $controller.data.function|>string.uppercase.first}}
