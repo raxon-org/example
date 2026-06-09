@@ -43,8 +43,9 @@ trait Main {
                 $command .= ' -' . escapeshellarg($key);
             }
             elseif(is_object($value)){
-                d($options);
-                ddd($value);
+                foreach($value as $k => $v){
+                    $command .= ' -' . escapeshellarg($key) . '.' . escapeshellarg($k) . '=' . escapeshellcmd($v);
+                }
             }
             else {
                 $command .= ' -' . escapeshellarg($key) . '=' . escapeshellcmd($value);
