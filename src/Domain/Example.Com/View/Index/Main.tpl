@@ -37,13 +37,13 @@
     <li>
         <p>
             <b>User-friendly:</b><br>
-            Despite being powerful, RAX/Framework doesn&quote;t compromise on the ease of use, making it well-suited for both beginners venturing into web application development and seasoned developers seeking powerful tools.<br>
+            Despite being powerful, RAX/Framework doesn&quot;t compromise on the ease of use, making it well-suited for both beginners venturing into web application development and seasoned developers seeking powerful tools.<br>
         </p>
     </li>
     </ol>
     <p>
         All in all, raxon/framework fuses power with ease and flexibility, offering an optimal toolset that caters well to contemporary web application development needs. <br>
-        Have a look at <a href="/Debug" title="Debug">debug</a> output to see what&quote;s going on under the hood.
+        Have a look at <a href="/Debug" title="Debug">debug</a> output to see what&quot;s going on under the hood.
     </p>
     <h3>License</h3>
     <pre>
