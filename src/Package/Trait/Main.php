@@ -43,6 +43,7 @@ trait Main {
                 $command .= ' -' . escapeshellarg($key);
             }
             elseif(is_object($value)){
+                d($options);
                 ddd($value);
             }
             else {
