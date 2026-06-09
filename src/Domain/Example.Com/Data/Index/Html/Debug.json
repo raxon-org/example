@@ -18,7 +18,8 @@
     ],
     "template" : {
         "name" : "{{file.basename($this.#rootNode.class)}}/{{$this.#rootNode.function|>string.uppercase.first|>string.replace:'_':'.'}}",
-        "url" : "{{config('controller.dir.view')}}{{$this.name}}.tpl"
+        "url" : "{{config('controller.dir.view')}}{{$this.name}}.tpl",
+        "#attr": "{{$this.#property|>default:'error'}"
     },
     "html" : {
         "content" : {
